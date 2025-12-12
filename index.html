@@ -73,7 +73,7 @@
 
   <section id="story">
     <h2>Our Story</h2>
-    <div id="story-content">Your story here - edit in admin.</div>
+    <div id="story-content">Ek thandi raat... ek ladke ka sapna. Edit in admin.</div>
   </section>
 
   <section id="menu">
@@ -90,7 +90,7 @@
       <h3>Enter Details</h3>
       <input id="customer-mobile" placeholder="Mobile Number" required>
       <input id="customer-email" placeholder="Email" required>
-      <input id="customer-address" placeholder="Full Address" required>
+      <textarea id="customer-address" placeholder="Full Address" required></textarea>
       <input type="date" id="delivery-date" required>
       <button onclick="submitOrder()">Submit Order</button>
     </div>
@@ -108,7 +108,6 @@
     <input type="password" id="admin-pass" placeholder="Password (shree123)">
     <button onclick="adminLogin()">Login</button>
     <div id="admin-form" style="display:none">
-      <!-- Products -->
       <h3>Products</h3>
       <input id="prod-name" placeholder="Product Name">
       <input id="prod-price" placeholder="Price">
@@ -118,22 +117,19 @@
       <button onclick="addProduct()">Add Product</button>
       <div id="prod-list"></div>
 
-      <!-- Social -->
       <h3>Social Links</h3>
       <input id="insta-link" placeholder="Instagram URL">
       <button onclick="saveSocial('instagram')">Save</button>
       <input id="yt-link" placeholder="YouTube URL">
       <button onclick="saveSocial('youtube')">Save</button>
 
-      <!-- Themes -->
-      <h3>Themes</h3>
-      <label>Home Color: <input type="color" id="home-color" onchange="saveTheme('home-color')"></label>
-      <label>Story Color: <input type="color" id="story-color" onchange="saveTheme('story-color')"></label>
-      <label>Menu Color: <input type="color" id="menu-color" onchange="saveTheme('menu-color')"></label>
-      <label>Cart Color: <input type="color" id="cart-color" onchange="saveTheme('cart-color')"></label>
-      <label>Contact Color: <input type="color" id="contact-color" onchange="saveTheme('contact-color')"></label>
+      <h3>Themes (Colors)</h3>
+      <label>Home: <input type="color" id="home-color" value="#fffaf5" onchange="saveTheme('home-color')"></label>
+      <label>Story: <input type="color" id="story-color" value="#f9f5f0" onchange="saveTheme('story-color')"></label>
+      <label>Menu: <input type="color" id="menu-color" value="#fff" onchange="saveTheme('menu-color')"></label>
+      <label>Cart: <input type="color" id="cart-color" value="#f9f5f0" onchange="saveTheme('cart-color')"></label>
+      <label>Contact: <input type="color" id="contact-color" value="#fffaf5" onchange="saveTheme('contact-color')"></label>
 
-      <!-- Story Edit -->
       <h3>Edit Story</h3>
       <textarea id="story-edit"></textarea>
       <button onclick="saveStory()">Save</button>
@@ -148,7 +144,7 @@
 </footer>
 
 <script>
-  // Hamburger
+  // Hamburger Menu
   document.getElementById('hamburger').onclick = () => document.getElementById('side-menu').classList.toggle('open');
 
   // Show Section
@@ -202,7 +198,7 @@
   function shareProduct(i) {
     const url = location.href + `#prod-${i}`;
     navigator.clipboard.writeText(url);
-    alert('Link copied! Share with anyone.');
+    alert('Link copied!');
   }
 
   // Cart
@@ -216,6 +212,7 @@
       else cart.push({name, price, quantity:1});
       localStorage.setItem('cart', JSON.stringify(cart));
       renderCart();
+      alert('Added to cart!');
     }
   });
 
@@ -228,7 +225,7 @@
         <div class="cart-item">
           <span>${item.name} × ${item.quantity}</span>
           <span>₹${item.price * item.quantity}</span>
-          <button onclick="cart.splice(${i},1);localStorage.setItem('cart',JSON.stringify(cart));renderCart()">Remove</button>
+          <button onclick="cart.splice(${i},1);localStorage.setItem('cart',JSON.stringify(cart));renderCart();">Remove</button>
         </div>
       `;
       total += item.price * item.quantity;
@@ -247,10 +244,10 @@
     const address = document.getElementById('customer-address').value;
     const date = document.getElementById('delivery-date').value;
     if (!mobile || !email || !address || !date) return alert('Fill all fields!');
-    let msg = 'New Order:\n' + cart.map(item => `${item.name} x${item.quantity} = ₹${item.price * item.quantity}`).join('\n') + `\nMobile: ${mobile}\nEmail: ${email}\nAddress: ${address}\nDelivery Date: ${date}\nTotal: ₹${cart.reduce((s,i)=>s+i.price*i.quantity,0)}`;
+    let msg = 'New Order:\n' + cart.map(item => `${item.name} x${item.quantity} = ₹${item.price * item.quantity}`).join('\n') + `\nMobile: ${mobile}\nEmail: ${email}\nAddress: ${address}\nDate: ${date}\nTotal: ₹${cart.reduce((s,i)=>s+i.price*i.quantity,0)}`;
     window.open('https://wa.me/919958341082?text=' + encodeURIComponent(msg));
-    alert('Order submitted!');
     cart = []; localStorage.setItem('cart', JSON.stringify(cart)); renderCart();
+    document.getElementById('order-form').style.display = 'none';
   }
 
   // Admin
@@ -307,6 +304,7 @@
     social[type] = document.getElementById(type + '-link').value;
     localStorage.setItem('social', JSON.stringify(social));
     loadSocial();
+    alert('Saved!');
   }
 
   function loadSocial() {
@@ -320,12 +318,14 @@
     themes[id] = document.getElementById(id).value;
     localStorage.setItem('themes', JSON.stringify(themes));
     document.getElementById(id.split('-')[0]).style.backgroundColor = themes[id];
+    alert('Theme saved!');
   }
 
   function saveStory() {
     storyText = document.getElementById('story-edit').value;
     localStorage.setItem('storyText', storyText);
     document.getElementById('story-content').innerHTML = storyText;
+    alert('Story saved!');
   }
 
   function uploadPhoto(event, id) {
@@ -335,7 +335,6 @@
     reader.readAsDataURL(file);
   }
 
-  // Load initial data
   loadSocial();
   renderMenu();
   renderCart();
