@@ -5,159 +5,319 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="google049d40e1f0d34e07" />
   <title>Shree Chaudhary’s Rustic Royale Bakery | Khalilabad</title>
-  <meta name="description" content="Best cakes, bread, biscuits & dry fruits in Khalilabad. Order online with home delivery. Call 9958341082">
+  <meta name="description" content="Best cakes, bread, biscuits & dry fruits in Khalilabad, Sant Kabir Nagar. Order online with home delivery. Call 9958341082">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;background:#f8f1e9;color:#4a2c0b;line-height:1.6}
-    nav{background:#8b4513;padding:15px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 4px 10px rgba(0,0,0,.1)}
-    nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:0 auto}
-    nav li{margin:0 15px}
-    nav a{color:#fff;text-decoration:none;font-weight:600;padding:8px 16px;border-radius:5px;transition:.3s}
-    nav a:hover{background:#a0522d}
-    .hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600') center/cover;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
-    h1{font-family:'Dancing Script',cursive;font-size:4.5rem;margin-bottom:10px}
-    .tagline{font-size:1.8rem;margin:20px 0}
-    .btn{display:inline-block;background:#ff6d00;color:#fff;padding:15px 35px;border-radius:30px;text-decoration:none;font-weight:600;margin:10px;box-shadow:0 5px 15px rgba(255,109,0,.3);transition:.3s}
-    .btn:hover{background:#e65100;transform:scale(1.05)}
-    .container{max-width:1200px;margin:0 auto;padding:20px}
-    section{padding:80px 20px}
-    h2{font-size:2.5rem;text-align:center;margin-bottom:40px;color:#8b4513}
-    .story{text-align:center;max-width:900px;margin:0 auto 60px;font-size:1.2rem}
-    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin:50px 0}
-    .card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,.1);text-align:center;padding:20px;transition:.3s}
-    .card:hover{transform:translateY(-8px)}
-    .card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
-    .price{font-size:1.6rem;color:#ff6d00;font-weight:700}
-    .cart-section{background:#f9f5f0;padding:60px 20px;border-radius:20px;margin:40px 0}
-    .cart-item{background:#fff;padding:15px;margin:10px 0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.05)}
-    .cart-total{font-size:1.8rem;text-align:right;margin:30px 0;color:#8b4513}
-    .contact{background:#8b4513;color:#fff;padding:80px 20px;text-align:center}
-    .contact p{font-size:1.4rem;margin:15px 0}
-    footer{background:#4a2c0b;color:#fff;text-align:center;padding:40px;font-size:1.1rem}
-    @media(max-width:768px){h1{font-size:3rem}.tagline{font-size:1.5rem}}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #fffaf5; color: #3e2723; line-height: 1.7; }
+    #hamburger { position: fixed; top: 10px; left: 10px; z-index: 1001; background: #bf360c; color: white; padding: 10px; border-radius: 5px; cursor: pointer; }
+    #side-menu { position: fixed; left: -250px; top: 0; width: 250px; height: 100%; background: #3e2723; color: white; transition: left 0.3s; z-index: 1000; padding: 60px 20px 20px; }
+    #side-menu ul { list-style: none; }
+    #side-menu li { margin: 15px 0; }
+    #side-menu a { color: white; text-decoration: none; font-size: 1.2rem; }
+    #side-menu.open { left: 0; }
+    .hero { background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600') center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+    section { padding: 80px 20px; min-height: 100vh; }
+    #home { background-color: #fffaf5; /* Edit in admin */ }
+    #story { background-color: #f9f5f0; /* Edit in admin */ }
+    #menu { background-color: #fff; /* Edit in admin */ }
+    #cart { background-color: #f9f5f0; /* Edit in admin */ }
+    #contact { background-color: #fffaf5; /* Edit in admin */ }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .card { background: white; border-radius: 20px; padding: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+    .admin-panel { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 900px; margin: 50px auto; }
+    input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
+    button { background: #ff6d00; color: white; padding: 15px; border: none; border-radius: 8px; cursor: pointer; font-size: 1.2rem; width: 100%; margin-top: 10px; }
+    .product { margin: 20px 0; padding: 15px; background: #f9f9f9; border-radius: 10px; }
+    .delete-btn { background: #e74c3c; float: right; padding: 8px 15px; }
   </style>
 </head>
 <body>
 
-<nav>
+<div id="hamburger">☰</div>
+<div id="side-menu">
   <ul>
     <li><a href="#home">Home</a></li>
-    <li><a href="#story">Our Story</a></li>
+    <li><a href="#story">Story</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#cart">Cart</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="/admin.html" style="background:#ff6d00">Admin</a></li>
+    <li><a href="#admin">Admin</a></li>
   </ul>
-</nav>
+</div>
 
 <section id="home" class="hero">
   <div>
     <h1>Shree Chaudhary’s<br>Rustic Royale Bakery</h1>
     <div class="tagline">Royal Taste in Every Bite</div>
-    <p style="font-size:1.3rem;margin:30px 0">Khalilabad, Sant Kabir Nagar</p>
-    <a href="https://wa.me/919958341082" class="btn">Order on WhatsApp</a>
+    <p>Khalilabad, Sant Kabir Nagar</p>
+    <a href="https://wa.me/919958341082" class="btn">Order Now</a>
   </div>
 </section>
 
 <div class="container">
 
-  <section id="story" class="story">
-    <h2>Our Journey</h2>
-    <p>Ek thandi raat... ek ladke ka sapna. 12th fail hua, Delhi gaya, 4 saal seekha, ghar lauta – aaj wohi sapna hai Rustic Royale Bakery.</p>
+  <section id="story">
+    <h2>Our Story</h2>
+    <div id="story-content" contenteditable="false">Edit in admin to add story.</div>
   </section>
 
   <section id="menu">
     <h2>Our Menu</h2>
-    <div class="menu-grid" id="menu-grid">
-      <!-- Products dynamically load here -->
-    </div>
+    <div class="menu-grid" id="menu-grid"></div>
   </section>
 
-  <section id="cart" class="cart-section">
+  <section id="cart">
     <h2>Your Cart</h2>
     <div id="cart-items"></div>
-    <p id="cart-total" class="cart-total">Total: ₹0</p>
-    <button id="checkout-btn" class="btn">Checkout on WhatsApp</button>
+    <p id="cart-total">Total: ₹0</p>
+    <button id="checkout-btn" class="btn">Checkout</button>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
+  <section id="contact">
+    <h2>Contact Us</h2>
     <p>+91 99583 41082</p>
-    <p>Near Nedula Chauraha, Vikas Bhavan Road, Khalilabad, UP</p>
+    <p>Nedula Chauraha, Vikas Bhavan Road, Khalilabad</p>
+    <div id="social-links"></div>
+  </section>
+
+  <section id="admin" class="admin-panel">
+    <h1>Admin Panel</h1>
+    <input type="password" id="admin-password" placeholder="Enter password">
+    <button onclick="loginAdmin()">Login</button>
+    <div id="admin-content" style="display:none">
+      <h2>Edit Products</h2>
+      <input id="product-name" placeholder="Product Name">
+      <input id="product-price" placeholder="Price">
+      <input id="product-image" placeholder="Image URL or upload">
+      <input type="file" id="product-file" onchange="handleFileUpload(event, 'product-image')">
+      <textarea id="product-desc" placeholder="Description"></textarea>
+      <button onclick="addProduct()">Add Product</button>
+      <h3>Current Products</h3>
+      <div id="product-list"></div>
+
+      <h2>Edit Social Links</h2>
+      <input id="instagram-link" placeholder="Instagram Link">
+      <button onclick="saveSocial('instagram')">Save Instagram</button>
+      <input id="youtube-link" placeholder="YouTube Link">
+      <button onclick="saveSocial('youtube')">Save YouTube</button>
+
+      <h2>Edit Themes</h2>
+      <h3>Home Theme</h3>
+      <input type="color" id="home-bg" placeholder="Background Color">
+      <button onclick="saveTheme('home-bg')">Save</button>
+      <input type="file" id="home-file" onchange="handleFileUpload(event, 'home-bg-image')">
+      <button onclick="saveTheme('home-bg-image')">Upload Photo</button>
+
+      <h3>Story Theme</h3>
+      <input type="color" id="story-bg" placeholder="Background Color">
+      <button onclick="saveTheme('story-bg')">Save</button>
+
+      <h3>Menu Theme</h3>
+      <input type="color" id="menu-bg" placeholder="Background Color">
+      <button onclick="saveTheme('menu-bg')">Save</button>
+
+      <h3>Cart Theme</h3>
+      <input type="color" id="cart-bg" placeholder="Background Color">
+      <button onclick="saveTheme('cart-bg')">Save</button>
+
+      <h3>Contact Theme</h3>
+      <input type="color" id="contact-bg" placeholder="Background Color">
+      <button onclick="saveTheme('contact-bg')">Save</button>
+
+      <h2>Edit Story</h2>
+      <textarea id="story-text" placeholder="Edit story here"></textarea>
+      <button onclick="saveStory()">Save Story</button>
+    </div>
   </section>
 
 </div>
 
-<footer>
-  <p>© 2025 Shree Chaudhary’s Rustic Royale Bakery</p>
-</footer>
-
 <script>
-let products = JSON.parse(localStorage.getItem('bakeryProducts')) || [
-  {name:"Designer Cakes",price:"1500",image:"https://images.unsplash.com/photo-1571115764595-644a1b8da89f?w=800",desc:"Birthday | Wedding"},
-  {name:"Signature Rusks",price:"400",image:"https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800",desc:"Cake rusk | Suji"},
-  {name:"Handmade Cookies",price:"500",image:"https://images.unsplash.com/photo-1549937840-6a25e7d4d2dc?w=800",desc:"Nankhatai | Chocolate"},
-  {name:"Dry Fruit Hampers",price:"1200",image:"https://images.unsplash.com/photo-1541695103-7333e3e5e3d6?w=800",desc:"Premium gifts"}
-];
-
-function renderMenu(){
-  const grid = document.getElementById('menu-grid');
-  grid.innerHTML = '';
-  products.forEach((p,i) => {
-    const card = document.createElement('div');
-    card.className = 'card';
-    card.innerHTML = `
-      <img src="${p.image}" alt="${p.name}">
-      <h3>${p.name}</h3>
-      <p>${p.desc}</p>
-      <p class="price">₹${p.price}</p>
-      <button class="btn add-to-cart" data-name="${p.name}" data-price="${p.price}">Add to Cart</button>
-    `;
-    grid.appendChild(card);
+  // Hamburger Menu
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('side-menu').classList.toggle('open');
   });
-}
 
-// Cart code
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-document.addEventListener('click', e => {
-  if(e.target.classList.contains('add-to-cart')){
-    const name = e.target.dataset.name;
-    const price = parseInt(e.target.dataset.price);
-    const existing = cart.find(item => item.name === name);
-    if(existing) existing.quantity++;
-    else cart.push({name, price, quantity:1});
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${name} added!`);
-    renderCart();
+  // Local Storage Data
+  let products = JSON.parse(localStorage.getItem('bakeryProducts')) || [];
+  let social = JSON.parse(localStorage.getItem('socialLinks')) || {};
+  let themes = JSON.parse(localStorage.getItem('themes')) || {};
+  let story = localStorage.getItem('story') || 'Edit in admin';
+
+  // Load Themes
+  for (let key in themes) {
+    if (key.endsWith('-bg')) {
+      document.getElementById(key.replace('-bg', '')).style.backgroundColor = themes[key];
+    } else if (key.endsWith('-image')) {
+      document.getElementById(key.replace('-bg-image', '')).style.backgroundImage = `url(${themes[key]})`;
+    }
   }
-});
 
-function renderCart(){
-  const container = document.getElementById('cart-items');
-  const totalElem = document.getElementById('cart-total');
-  container.innerHTML = '';
-  let total = 0;
-  cart.forEach((item, i) => {
-    const div = document.createElement('div');
-    div.className = 'cart-item';
-    div.innerHTML = `<span>${item.name} × ${item.quantity}</span><span>₹${item.price * item.quantity}</span><button onclick="cart.splice(${i},1);localStorage.setItem('cart',JSON.stringify(cart));renderCart();">Remove</button>`;
-    container.appendChild(div);
-    total += item.price * item.quantity;
+  // Load Story
+  document.getElementById('story-content').innerHTML = story;
+
+  // Load Social Links
+  function loadSocial() {
+    const links = document.getElementById('social-links');
+    links.innerHTML = '';
+    if (social.instagram) links.innerHTML += `<a href="${social.instagram}" class="btn">Instagram</a>`;
+    if (social.youtube) links.innerHTML += `<a href="${social.youtube}" class="btn">YouTube</a>`;
+  }
+  loadSocial();
+
+  // Render Menu
+  function renderMenu() {
+    const grid = document.getElementById('menu-grid');
+    grid.innerHTML = '';
+    products.forEach((p, i) => {
+      const id = `product-${i}`;
+      grid.innerHTML += `
+        <div class="card" id="${id}">
+          <img src="${p.image}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.desc}</p>
+          <p class="price">₹${p.price}</p>
+          <button class="btn add-to-cart" data-name="${p.name}" data-price="${p.price}">Add to Cart</button>
+          <a href="#${id}" style="display:block;margin:10px 0">Share Link</a>
+        </div>
+      `;
+    });
+  }
+  renderMenu();
+
+  // Cart Logic
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  function renderCart() {
+    const container = document.getElementById('cart-items');
+    container.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, i) => {
+      container.innerHTML += `
+        <div class="cart-item">
+          <span>${item.name} × ${item.quantity}</span>
+          <span>₹${item.price * item.quantity}</span>
+          <button onclick="cart.splice(${i},1);localStorage.setItem('cart',JSON.stringify(cart));renderCart()">Remove</button>
+        </div>
+      `;
+      total += item.price * item.quantity;
+    });
+    document.getElementById('cart-total').textContent = `Total: ₹${total}`;
+  }
+  renderCart();
+
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const name = btn.dataset.name;
+      const price = parseInt(btn.dataset.price);
+      const item = cart.find(i => i.name === name);
+      if (item) item.quantity++;
+      else cart.push({name, price, quantity:1});
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    });
   });
-  totalElem.textContent = `Total: ₹${total}`;
-}
 
-document.getElementById('checkout-btn').addEventListener('click', () => {
-  if(cart.length === 0) return alert('Cart empty!');
-  let msg = 'Order:\n';
-  cart.forEach(item => msg += `${item.name} x${item.quantity} = ₹${item.price * item.quantity}\n`);
-  msg += `Total: ₹${cart.reduce((s,i)=>s+i.price*i.quantity,0)}`;
-  window.open(`https://wa.me/919958341082?text=${encodeURIComponent(msg)}`);
-});
+  document.getElementById('checkout-btn').addEventListener('click', () => {
+    let msg = 'Order:\n' + cart.map(item => `${item.name} x${item.quantity} = ₹${item.price * item.quantity}`).join('\n') + '\nTotal: ₹' + cart.reduce((s, i) => s + i.price * i.quantity, 0);
+    window.open('https://wa.me/919958341082?text=' + encodeURIComponent(msg));
+  });
 
-renderMenu();
-renderCart();
+  // Admin Logic
+  if (location.hash === '#admin') {
+    document.getElementById('admin').style.display = 'block';
+  } else {
+    document.getElementById('admin').style.display = 'none';
+  }
+
+  function loginAdmin() {
+    if (document.getElementById('admin-password').value === 'shree123') {
+      document.getElementById('admin-content').style.display = 'block';
+      document.getElementById('admin-password').style.display = 'none';
+      document.querySelectorAll('[onclick="loginAdmin()"]')[0].style.display = 'none';
+      loadAdmin();
+    } else {
+      alert('Wrong password!');
+    }
+  }
+
+  function loadAdmin() {
+    document.getElementById('story-text').value = story;
+    document.getElementById('instagram-link').value = social.instagram || '';
+    document.getElementById('youtube-link').value = social.youtube || '';
+    document.getElementById('home-bg').value = themes['home-bg'] || '#fffaf5';
+    document.getElementById('story-bg').value = themes['story-bg'] || '#f9f5f0';
+    document.getElementById('menu-bg').value = themes['menu-bg'] || '#fff';
+    document.getElementById('cart-bg').value = themes['cart-bg'] || '#f9f5f0';
+    document.getElementById('contact-bg').value = themes['contact-bg'] || '#fffaf5';
+    renderProductList();
+  }
+
+  function addProduct() {
+    products.push({
+      name: document.getElementById('product-name').value,
+      price: document.getElementById('product-price').value,
+      image: document.getElementById('product-image').value,
+      desc: document.getElementById('product-desc').value
+    });
+    localStorage.setItem('bakeryProducts', JSON.stringify(products));
+    renderMenu();
+    renderProductList();
+  }
+
+  function deleteProduct(i) {
+    products.splice(i, 1);
+    localStorage.setItem('bakeryProducts', JSON.stringify(products));
+    renderMenu();
+    renderProductList();
+  }
+
+  function renderProductList() {
+    const list = document.getElementById('product-list');
+    list.innerHTML = '';
+    products.forEach((p, i) => {
+      list.innerHTML += `
+        <div class="product">
+          <strong>${p.name}</strong> - ₹${p.price}<br>
+          <img src="${p.image}" width="100">
+          <p>${p.desc}</p>
+          <button class="delete-btn" onclick="deleteProduct(${i})">Delete</button>
+        </div>
+      `;
+    });
+  }
+
+  function saveSocial(type) {
+    social[type] = document.getElementById(type + '-link').value;
+    localStorage.setItem('socialLinks', JSON.stringify(social));
+    loadSocial();
+  }
+
+  function saveTheme(id) {
+    themes[id] = document.getElementById(id).value;
+    localStorage.setItem('themes', JSON.stringify(themes));
+    document.getElementById(id.split('-')[0]).style.backgroundColor = themes[id];
+  }
+
+  function saveStory() {
+    story = document.getElementById('story-text').value;
+    localStorage.setItem('story', story);
+    document.getElementById('story-content').innerHTML = story;
+  }
+
+  function handleFileUpload(event, id) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById(id).value = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  loadSocial();
+  renderMenu();
 </script>
 
 </body>
