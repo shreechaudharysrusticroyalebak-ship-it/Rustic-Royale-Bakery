@@ -4,17 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="google049d40e1f0d34e07" />
-  <title>Shree Chaudhary’s Rustic Royale Bakery</title>
+  <title>Shree Chaudhary's Rustic Royale Bakery</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Poppins', sans-serif; color: #3e2723; line-height: 1.7; overflow-x: hidden; }
     #hamburger { position: fixed; top: 15px; left: 15px; z-index: 1001; background: #bf360c; color: white; padding: 10px; border-radius: 5px; cursor: pointer; font-size: 1.5rem; }
-    #side-menu { position: fixed; left: -300px; top: 0; width: 300px; height: 100vh; background: #3e2723; color: white; transition: left 0.3s ease; z-index: 1000; padding: 70px 20px 20px; }
+    #side-menu { position: fixed; left: -250px; top: 0; width: 250px; height: 100vh; background: #3e2723; color: white; transition: left 0.3s ease; z-index: 1000; padding: 60px 20px 20px; }
     #side-menu.open { left: 0; }
     #side-menu ul { list-style: none; }
-    #side-menu li { margin: 20px 0; }
-    #side-menu a { color: white; text-decoration: none; font-size: 1.3rem; display: block; padding: 10px; border-radius: 5px; transition: background 0.3s; }
+    #side-menu li { margin: 15px 0; }
+    #side-menu a { color: white; text-decoration: none; font-size: 1.2rem; padding: 10px; border-radius: 5px; display: block; }
     #side-menu a:hover { background: #bf360c; }
     .hero { background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600') center/cover; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
     h1 { font-family: 'Dancing Script', cursive; font-size: 4.5rem; margin-bottom: 10px; }
@@ -24,11 +24,11 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
     section { padding: 80px 20px; min-height: 100vh; display: none; }
     section.active { display: block; }
-    #home { background: #fffaf5; } /* Admin se edit */
-    #story { background: #f9f5f0; } /* Admin se edit */
-    #menu { background: #fff; } /* Admin se edit */
-    #cart { background: #f9f5f0; } /* Admin se edit */
-    #contact { background: #fffaf5; } /* Admin se edit */
+    #home { background: #fffaf5; } /* Admin edit */
+    #story { background: #f9f5f0; } /* Admin edit */
+    #menu { background: #fff; } /* Admin edit */
+    #cart { background: #f9f5f0; } /* Admin edit */
+    #contact { background: #fffaf5; } /* Admin edit */
     .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
     .card { background: white; border-radius: 20px; padding: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: 0.3s; }
     .card:hover { transform: translateY(-5px); }
@@ -36,6 +36,8 @@
     .price { font-size: 1.6rem; color: #ff6d00; font-weight: 700; }
     .cart-item { background: #f9f9f9; padding: 15px; margin: 10px 0; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; }
     .cart-total { font-size: 1.8rem; text-align: right; margin: 30px 0; color: #8b4513; }
+    .order-form { max-width: 500px; margin: 20px auto; }
+    .order-form input, .order-form textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
     .admin-panel { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 900px; margin: 50px auto; display: none; }
     .admin-panel.active { display: block; }
     input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 8px; }
@@ -51,19 +53,19 @@
 <div id="hamburger">☰</div>
 <nav id="side-menu">
   <ul>
-    <li><a href="#" onclick="showSection('home')" target="_blank">Home</a></li>
-    <li><a href="#" onclick="showSection('story')" target="_blank">Story</a></li>
-    <li><a href="#" onclick="showSection('menu')" target="_blank">Menu</a></li>
-    <li><a href="#" onclick="showSection('cart')" target="_blank">Cart</a></li>
-    <li><a href="#" onclick="showSection('contact')" target="_blank">Contact</a></li>
-    <li><a href="#" onclick="showSection('admin')" target="_blank">Admin</a></li>
+    <li><a href="#" onclick="showSection('home')">Home</a></li>
+    <li><a href="#" onclick="showSection('story')">Story</a></li>
+    <li><a href="#" onclick="showSection('menu')">Menu</a></li>
+    <li><a href="#" onclick="showSection('cart')">Cart</a></li>
+    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+    <li><a href="#" onclick="showSection('admin')">Admin</a></li>
   </ul>
 </nav>
 
 <div class="container">
   <section id="home" class="active">
     <div class="hero">
-      <h1>Shree Chaudhary’s Rustic Royale Bakery</h1>
+      <h1>Shree Chaudhary's Rustic Royale Bakery</h1>
       <div class="tagline">Royal Taste in Every Bite</div>
       <a href="https://wa.me/919958341082" class="btn">Order Now</a>
     </div>
@@ -71,7 +73,7 @@
 
   <section id="story">
     <h2>Our Story</h2>
-    <div id="story-content">Ek thandi raat... ek ladke ka sapna. Edit in admin.</div>
+    <div id="story-content">Your story here - edit in admin.</div>
   </section>
 
   <section id="menu">
@@ -83,7 +85,15 @@
     <h2>Cart</h2>
     <div id="cart-items"></div>
     <p id="cart-total">Total: ₹0</p>
-    <button id="checkout-btn" class="btn">Checkout</button>
+    <button onclick="showOrderForm()" class="btn">Checkout</button>
+    <div id="order-form" style="display:none" class="order-form">
+      <h3>Enter Details</h3>
+      <input id="customer-mobile" placeholder="Mobile Number" required>
+      <input id="customer-email" placeholder="Email" required>
+      <input id="customer-address" placeholder="Full Address" required>
+      <input type="date" id="delivery-date" required>
+      <button onclick="submitOrder()">Submit Order</button>
+    </div>
   </section>
 
   <section id="contact">
@@ -108,33 +118,25 @@
       <button onclick="addProduct()">Add Product</button>
       <div id="prod-list"></div>
 
-      <!-- Social Links -->
+      <!-- Social -->
       <h3>Social Links</h3>
       <input id="insta-link" placeholder="Instagram URL">
-      <button onclick="saveSocial('instagram')">Save Instagram</button>
+      <button onclick="saveSocial('instagram')">Save</button>
       <input id="yt-link" placeholder="YouTube URL">
-      <button onclick="saveSocial('youtube')">Save YouTube</button>
+      <button onclick="saveSocial('youtube')">Save</button>
 
       <!-- Themes -->
-      <h3>Themes (Colors)</h3>
-      <label>Home Background: <input type="color" id="home-color" value="#fffaf5" onchange="saveTheme('home-color')"></label>
-      <label>Story Background: <input type="color" id="story-color" value="#f9f5f0" onchange="saveTheme('story-color')"></label>
-      <label>Menu Background: <input type="color" id="menu-color" value="#fff" onchange="saveTheme('menu-color')"></label>
-      <label>Cart Background: <input type="color" id="cart-color" value="#f9f5f0" onchange="saveTheme('cart-color')"></label>
-      <label>Contact Background: <input type="color" id="contact-color" value="#fffaf5" onchange="saveTheme('contact-color')"></label>
+      <h3>Themes</h3>
+      <label>Home Color: <input type="color" id="home-color" onchange="saveTheme('home-color')"></label>
+      <label>Story Color: <input type="color" id="story-color" onchange="saveTheme('story-color')"></label>
+      <label>Menu Color: <input type="color" id="menu-color" onchange="saveTheme('menu-color')"></label>
+      <label>Cart Color: <input type="color" id="cart-color" onchange="saveTheme('cart-color')"></label>
+      <label>Contact Color: <input type="color" id="contact-color" onchange="saveTheme('contact-color')"></label>
 
       <!-- Story Edit -->
       <h3>Edit Story</h3>
-      <textarea id="story-edit" placeholder="Story text"></textarea>
-      <button onclick="saveStory()">Save Story</button>
-
-      <!-- Photo Upload for Sections -->
-      <h3>Upload Photos</h3>
-      <label>Home Photo: <input type="file" id="home-photo" onchange="uploadPhoto(event, 'home-photo')"></label>
-      <button onclick="savePhoto('home-photo')">Save</button>
-      <label>Story Photo: <input type="file" id="story-photo" onchange="uploadPhoto(event, 'story-photo')"></label>
-      <button onclick="savePhoto('story-photo')">Save</button>
-      <!-- Similar for other sections -->
+      <textarea id="story-edit"></textarea>
+      <button onclick="saveStory()">Save</button>
 
       <button onclick="logoutAdmin()">Logout</button>
     </div>
@@ -142,16 +144,17 @@
 </div>
 
 <footer>
-  <p>© 2025 Shree Chaudhary’s Rustic Royale Bakery</p>
+  <p>© 2025 Shree Chaudhary's Rustic Royale Bakery</p>
 </footer>
 
 <script>
-  // Hamburger Menu
+  // Hamburger
   document.getElementById('hamburger').onclick = () => document.getElementById('side-menu').classList.toggle('open');
 
-  // Show Section in New Tab
+  // Show Section
   function showSection(sec) {
-    window.open(location.href.split('#')[0] + '#' + sec, '_blank');
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.getElementById(sec).classList.add('active');
     document.getElementById('side-menu').classList.remove('open');
   }
 
@@ -159,27 +162,23 @@
   let products = JSON.parse(localStorage.getItem('products')) || [];
   let social = JSON.parse(localStorage.getItem('social')) || {};
   let themes = JSON.parse(localStorage.getItem('themes')) || {};
-  let photos = JSON.parse(localStorage.getItem('photos')) || {};
-  let storyText = localStorage.getItem('storyText') || 'Default story';
+  let storyText = localStorage.getItem('storyText') || '';
 
   // Apply Themes
   Object.keys(themes).forEach(key => {
-    const elem = document.getElementById(key);
-    if (elem) elem.style.backgroundColor = themes[key];
+    document.getElementById(key.split('-')[0]).style.backgroundColor = themes[key];
   });
 
   // Load Story
+  document.getElementById('story-content').innerHTML = storyText;
   document.getElementById('story-edit').value = storyText;
 
   // Load Social
   if (social.instagram) document.getElementById('insta-link').value = social.instagram;
   if (social.youtube) document.getElementById('yt-link').value = social.youtube;
 
-  // Load Products
-  renderProducts();
-
-  // Render Products
-  function renderProducts() {
+  // Render Menu
+  function renderMenu() {
     const grid = document.getElementById('menu-grid');
     grid.innerHTML = '';
     products.forEach((p, i) => {
@@ -191,17 +190,75 @@
         <h3>${p.name}</h3>
         <p>${p.desc}</p>
         <p class="price">₹${p.price}</p>
-        <a href="#prod-${i}" class="btn">Share Product</a>
+        <button class="btn add-to-cart" data-name="${p.name}" data-price="${p.price}">Add to Cart</button>
+        <a href="#prod-${i}" class="btn" onclick="shareProduct(${i})">Share</a>
       `;
       grid.appendChild(card);
     });
   }
+  renderMenu();
 
-  // Admin Login
+  // Share Product
+  function shareProduct(i) {
+    const url = location.href + `#prod-${i}`;
+    navigator.clipboard.writeText(url);
+    alert('Link copied! Share with anyone.');
+  }
+
+  // Cart
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  document.addEventListener('click', e => {
+    if (e.target.classList.contains('add-to-cart')) {
+      const name = e.target.dataset.name;
+      const price = parseInt(e.target.dataset.price);
+      const item = cart.find(i => i.name === name);
+      if (item) item.quantity++;
+      else cart.push({name, price, quantity:1});
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+  });
+
+  function renderCart() {
+    const container = document.getElementById('cart-items');
+    container.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, i) => {
+      container.innerHTML += `
+        <div class="cart-item">
+          <span>${item.name} × ${item.quantity}</span>
+          <span>₹${item.price * item.quantity}</span>
+          <button onclick="cart.splice(${i},1);localStorage.setItem('cart',JSON.stringify(cart));renderCart()">Remove</button>
+        </div>
+      `;
+      total += item.price * item.quantity;
+    });
+    document.getElementById('cart-total').textContent = `Total: ₹${total}`;
+  }
+  renderCart();
+
+  function showOrderForm() {
+    document.getElementById('order-form').style.display = 'block';
+  }
+
+  function submitOrder() {
+    const mobile = document.getElementById('customer-mobile').value;
+    const email = document.getElementById('customer-email').value;
+    const address = document.getElementById('customer-address').value;
+    const date = document.getElementById('delivery-date').value;
+    if (!mobile || !email || !address || !date) return alert('Fill all fields!');
+    let msg = 'New Order:\n' + cart.map(item => `${item.name} x${item.quantity} = ₹${item.price * item.quantity}`).join('\n') + `\nMobile: ${mobile}\nEmail: ${email}\nAddress: ${address}\nDelivery Date: ${date}\nTotal: ₹${cart.reduce((s,i)=>s+i.price*i.quantity,0)}`;
+    window.open('https://wa.me/919958341082?text=' + encodeURIComponent(msg));
+    alert('Order submitted!');
+    cart = []; localStorage.setItem('cart', JSON.stringify(cart)); renderCart();
+  }
+
+  // Admin
   function adminLogin() {
     if (document.getElementById('admin-pass').value === 'shree123') {
       document.getElementById('admin-form').style.display = 'block';
       document.getElementById('admin-pass').style.display = 'none';
+      renderProductList();
     } else alert('Wrong password!');
   }
 
@@ -211,7 +268,6 @@
     document.getElementById('admin-pass').value = '';
   }
 
-  // Add Product
   function addProduct() {
     products.push({
       name: document.getElementById('prod-name').value,
@@ -220,34 +276,58 @@
       desc: document.getElementById('prod-desc').value
     });
     localStorage.setItem('products', JSON.stringify(products));
-    renderProducts();
-    alert('Product added!');
+    renderMenu();
+    renderProductList();
+    alert('Added!');
   }
 
-  // Save Social
+  function deleteProduct(i) {
+    products.splice(i, 1);
+    localStorage.setItem('products', JSON.stringify(products));
+    renderMenu();
+    renderProductList();
+  }
+
+  function renderProductList() {
+    const list = document.getElementById('prod-list');
+    list.innerHTML = '';
+    products.forEach((p, i) => {
+      list.innerHTML += `
+        <div class="product">
+          <strong>${p.name}</strong> - ₹${p.price}<br>
+          <img src="${p.image}" width="100">
+          <p>${p.desc}</p>
+          <button class="delete-btn" onclick="deleteProduct(${i})">Delete</button>
+        </div>
+      `;
+    });
+  }
+
   function saveSocial(type) {
     social[type] = document.getElementById(type + '-link').value;
     localStorage.setItem('social', JSON.stringify(social));
-    alert('Saved!');
+    loadSocial();
   }
 
-  // Save Theme
+  function loadSocial() {
+    const links = document.getElementById('social-links');
+    links.innerHTML = '';
+    if (social.instagram) links.innerHTML += `<a href="${social.instagram}" class="btn">Instagram</a>`;
+    if (social.youtube) links.innerHTML += `<a href="${social.youtube}" class="btn">YouTube</a>`;
+  }
+
   function saveTheme(id) {
     themes[id] = document.getElementById(id).value;
     localStorage.setItem('themes', JSON.stringify(themes));
-    const section = document.getElementById(id.split('-')[0]);
-    section.style.backgroundColor = themes[id];
-    alert('Theme saved!');
+    document.getElementById(id.split('-')[0]).style.backgroundColor = themes[id];
   }
 
-  // Save Story
   function saveStory() {
     storyText = document.getElementById('story-edit').value;
     localStorage.setItem('storyText', storyText);
-    alert('Story saved!');
+    document.getElementById('story-content').innerHTML = storyText;
   }
 
-  // Upload Photo (base64)
   function uploadPhoto(event, id) {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -255,17 +335,11 @@
     reader.readAsDataURL(file);
   }
 
-  function savePhoto(id) {
-    photos[id] = document.getElementById(id).value;
-    localStorage.setItem('photos', JSON.stringify(photos));
-    alert('Photo saved!');
-  }
-
-  // Cart (simple)
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  // Add cart logic here (from previous code)
-
+  // Load initial data
+  loadSocial();
+  renderMenu();
+  renderCart();
 </script>
 
 </body>
-  </html>
+</html>
