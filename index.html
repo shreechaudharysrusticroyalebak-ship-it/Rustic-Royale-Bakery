@@ -5,33 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="google049d40e1f0d34e07" />
   <title>Shree Chaudhary’s Rustic Royale Bakery | Khalilabad</title>
-  <meta name="description" content="Khalilabad की premium bakery - Cakes, Rusks, Cookies | Royal Taste in Every Bite | Call/WhatsApp 9958341082">
+  <meta name="description" content="Premium handmade bakery in Khalilabad - Cakes, Rusks, Cookies | Royal Taste in Every Bite">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;background:#fffaf5;color:#3e2723;line-height:1.7}
-    nav{background:#bf360c;padding:15px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
-    nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap}
-    nav li{margin:10px 20px}
-    nav a{color:white;text-decoration:none;font-weight:600;font-size:1.1rem}
-    nav a:hover{color:#ffab40}
-    header{background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600') center/cover no-repeat;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:white}
-    h1{font-family:'Dancing Script',cursive;font-size:5rem;margin-bottom:10px}
-    .tagline{font-size:2rem;font-weight:600;margin:20px 0}
-    .btn{display:inline-block;background:#ff6d00;color:white;padding:14px 30px;border-radius:50px;text-decoration:none;font-weight:600;margin:10px;box-shadow:0 5px 15px rgba(255,109,0,0.4);transition:0.3s}
+    body{font-family:'Poppins',sans-serif;background:#f8f1e9;color:#4a2c0b;line-height:1.6}
+    nav{background:#8b4513;padding:15px 0;position:fixed;width:100%;top:0;z-index:1000;box-shadow:0 4px 10px rgba(0,0,0,0.1)}
+    nav ul{list-style:none;display:flex;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+    nav li{margin:0 15px}
+    nav a{color:#fff;text-decoration:none;font-weight:600;font-size:1rem;padding:8px 16px;border-radius:5px;transition:0.3s}
+    nav a:hover{background:#a0522d}
+    .hero{background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600') center/cover no-repeat;height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative}
+    .coming-soon{position:absolute;top:20%;left:50%;transform:translateX(-50%);background:#ff6d00;color:#fff;padding:20px 40px;border-radius:50px;font-size:2rem;font-weight:600;animation:fadeIn 1s ease-in}
+    @keyframes fadeIn{from{opacity:0;transform:translate(-50%, -20px)}to{opacity:1;transform:translateX(-50%)}}
+    h1{font-family:'Dancing Script',cursive;font-size:4rem;margin-bottom:10px}
+    .tagline{font-size:1.8rem;margin:20px 0}
+    .btn{display:inline-block;background:#ff6d00;color:#fff;padding:15px 30px;border-radius:30px;text-decoration:none;font-weight:600;margin:10px;font-size:1.1rem;box-shadow:0 5px 15px rgba(255,109,0,0.3);transition:0.3s}
     .btn:hover{background:#e65100;transform:scale(1.05)}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    section{padding:80px 20px 60px}
-    h2{font-size:2.5rem;text-align:center;margin-bottom:40px;color:#bf360c;text-align:center}
-    .story p{font-size:1.2rem;margin:20px auto;max-width:900px;text-align:center;color:#5d4037}
-    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin:40px 0}
-    .card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.1);text-align:center;padding:20px;transition:0.3s}
-    .card:hover{transform:translateY(-10px)}
-    .card img{width:100%;height:200px;object-fit:cover;border-radius:15px}
-    .price{font-size:1.6rem;color:#ff6d00;font-weight:700}
-    .cart-item{background:#f9f9f9;padding:15px;margin:10px 0;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
-    footer{background:#bf360c;color:white;text-align:center;padding:30px;font-size:1.1rem}
-    @media(max-width:768px){h1{font-size:3.5rem}.tagline{font-size:1.6rem}}
+    .container{max-width:1200px;margin:0 auto;padding:20px}
+    section{padding:80px 20px}
+    h2{font-size:2.5rem;text-align:center;margin-bottom:40px;color:#8b4513}
+    .brand-intro{text-align:center;padding:60px 20px;background:#f9f5f0;border-radius:20px;margin:40px 0;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+    .brand-intro p{font-size:1.2rem;margin:20px 0;max-width:800px;margin-left:auto;margin-right:auto}
+    .menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin:50px 0}
+    .card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.1);text-align:center;padding:20px;transition:0.3s}
+    .card:hover{transform:translateY(-5px)}
+    .card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+    .card h3{margin:15px 0 10px;color:#8b4513;font-size:1.4rem}
+    .price{font-size:1.5rem;color:#ff6d00;font-weight:700}
+    .cart-section{background:#f9f5f0;padding:60px 20px;border-radius:20px;margin:40px 0}
+    .cart-item{background:#fff;padding:15px;margin:10px 0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+    .cart-total{font-size:1.8rem;text-align:right;margin:30px 0;color:#8b4513}
+    .contact{background:#8b4513;color:#fff;padding:80px 20px;text-align:center}
+    .contact p{font-size:1.4rem;margin:15px 0}
+    .map-container{margin:40px 0}
+    footer{background:#4a2c0b;color:#fff;text-align:center;padding:40px;font-size:1.1rem}
+    @media(max-width:768px){h1{font-size:3rem}.tagline{font-size:1.4rem}nav ul{flex-direction:column}}
   </style>
 </head>
 <body>
@@ -39,91 +48,89 @@
 <nav>
   <ul>
     <li><a href="#home">Home</a></li>
-    <li><a href="#story">Our Story</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#cart">Cart</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<header id="home">
+<section id="home" class="hero">
+  <div class="coming-soon">Coming Soon! Launching Premium Bakery Experience</div>
   <div>
     <h1>Shree Chaudhary’s<br>Rustic Royale Bakery</h1>
     <div class="tagline">Royal Taste in Every Bite</div>
-    <p style="font-size:1.5rem;margin:30px 0">Khalilabad, Sant Kabir Nagar</p>
-    <a href="https://wa.me/919958341082" class="btn">Order on WhatsApp</a>
+    <p style="font-size:1.2rem;margin:30px 0">Khalilabad, Sant Kabir Nagar</p>
+    <a href="https://wa.me/919958341082" class="btn">Pre-Order Now</a>
   </div>
-</header>
+</section>
 
 <div class="container">
 
-  <!-- Story Section -->
-  <section id="story">
-    <h2>Our Story</h2>
-    <div class="story">
-      <p>Ek thandi raat, Sant Kabir Nagar mein… ek ladka khali notebook dekhta raha aur bola:</p>
-      <p style="font-style:italic;font-size:1.8rem;color:#bf360c">“Ek din mera naam matter karega… mera taste duniya mein jayega…”</p>
-      <p>Woh ladka tha <strong>Amresh Chaudhary</strong>. 12th fail hua, Delhi gaya, dekha degree waale bhi line mein khade hain. Usne socha – “Mujhe naukri nahi, mastery chahiye.”</p>
-      <p>4 saal Delhi ki organic bakery mein seekha, phir ghar lauta Khalilabad. Aaj wohi sapna hai <strong>Shree Chaudhary’s Rustic Royale Bakery</strong> – struggle se legacy tak ka safar.</p>
-      <p>Har bite mein honesty, har product mein passion.</p>
-    </div>
+  <section id="about" class="brand-intro">
+    <h2>Our Brand Promise</h2>
+    <p><!-- Edit Here: Brand Value 1 -->Handmade with love, using authentic recipes.</p>
+    <p><!-- Edit Here: Brand Value 2 -->Committed to quality and freshness daily.</p>
+    <p><!-- Edit Here: Brand Value 3 -->Honestly priced for every celebration.</p>
+    <div class="coming-soon" style="font-size:1.2rem;margin-top:30px">More About Us Coming Soon!</div>
   </section>
 
-  <!-- Menu Section -->
   <section id="menu">
-    <h2>Our Premium Menu</h2>
+    <h2>Our Menu Categories</h2>
     <div class="menu-grid">
       <div class="card">
         <img src="https://images.unsplash.com/photo-1571115764595-644a1b8da89f?w=800" alt="Cakes">
-        <h3>Designer Cakes</h3>
-        <p>Birthday | Wedding | Anniversary</p>
-        <p class="price">From ₹1500/kg</p>
-        <button class="btn add-to-cart" data-name="Designer Cake" data-price="1500">Add to Cart</button>
+        <h3><!-- Edit Product Category: e.g., Cakes -->Category 1</h3>
+        <p><!-- Edit Description -->Premium handmade options for celebrations.</p>
+        <p class="price"><!-- Edit Price -->From ₹1500</p>
+        <button class="btn add-to-cart" data-name="Category 1" data-price="1500">Add to Cart</button>
       </div>
       <div class="card">
         <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800" alt="Rusks">
-        <h3>Signature Rusks</h3>
-        <p>Cake rusk | Suji | Masala</p>
-        <p class="price">₹350–600/kg</p>
-        <button class="btn add-to-cart" data-name="Signature Rusks" data-price="400">Add to Cart</button>
+        <h3><!-- Edit Product Category: e.g., Rusks -->Category 2</h3>
+        <p><!-- Edit Description -->Fresh baked daily with traditional flavors.</p>
+        <p class="price"><!-- Edit Price -->₹350/kg</p>
+        <button class="btn add-to-cart" data-name="Category 2" data-price="350">Add to Cart</button>
       </div>
       <div class="card">
         <img src="https://images.unsplash.com/photo-1549937840-6a25e7d4d2dc?w=800" alt="Cookies">
-        <h3>Handmade Cookies</h3>
-        <p>Nankhatai | Chocolate | Butter</p>
-        <p class="price">₹400–700/kg</p>
-        <button class="btn add-to-cart" data-name="Handmade Cookies" data-price="500">Add to Cart</button>
+        <h3><!-- Edit Product Category: e.g., Cookies -->Category 3</h3>
+        <p><!-- Edit Description -->Artisan varieties for tea time.</p>
+        <p class="price"><!-- Edit Price -->₹400/kg</p>
+        <button class="btn add-to-cart" data-name="Category 3" data-price="400">Add to Cart</button>
       </div>
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1541695103-7333e3e5e3d6?w=800" alt="Dry Fruits">
-        <h3>Premium Dry Fruits & Gifts</h3>
-        <p>Gift hampers | Corporate</p>
-        <p class="price">₹900+/kg</p>
-        <button class="btn add-to-cart" data-name="Dry Fruit Hamper" data-price="1200">Add to Cart</button>
+        <img src="https://images.unsplash.com/photo-1541695103-7333e3e5e3d6?w=800" alt="Gifts">
+        <h3><!-- Edit Product Category: e.g., Gifts -->Category 4</h3>
+        <p><!-- Edit Description -->Gifting hampers for special occasions.</p>
+        <p class="price"><!-- Edit Price -->₹900+</p>
+        <button class="btn add-to-cart" data-name="Category 4" data-price="900">Add to Cart</button>
       </div>
     </div>
+    <div class="coming-soon" style="text-align:center;font-size:1.2rem;margin-top:30px">Full Menu Launching Soon – Stay Tuned!</div>
   </section>
 
-  <!-- Cart Section -->
-  <section id="cart">
-    <h2>Your Cart</h2>
+  <section id="cart" class="cart-section">
+    <h2>Your Shopping Cart</h2>
     <div id="cart-items"></div>
-    <p id="cart-total" style="font-size:1.8rem;text-align:right;margin:30px 0">Total: ₹0</p>
+    <p id="cart-total" class="cart-total">Total: ₹0</p>
     <button id="checkout-btn" class="btn">Checkout on WhatsApp</button>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact & Location</h2>
-    <p style="font-size:1.6rem;text-align:center">+91 99583 41082 (Call & WhatsApp)</p>
-    <p style="text-align:center">Near Nedula Chauraha, Vikas Bhavan Road<br>Khalilabad, Sant Kabir Nagar, Uttar Pradesh</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.5!2d83.075!3d26.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjYCNDYnNDQuNiJOIDgzCkA1NCc1Ny42IkU!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="400" style="border:0;border-radius:20px;margin-top:30px" allowfullscreen="" loading="lazy"></iframe>
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>+91 99583 41082 (Call & WhatsApp)</p>
+    <p>Near Nedula Chauraha, Vikas Bhavan Road<br>Khalilabad, Sant Kabir Nagar, Uttar Pradesh</p>
+    <p><!-- Edit Here: Additional Info -->Home delivery available across India</p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.5!2d83.075!3d26.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjYCNDYnNDQuNiJOIDgzCkA1NCc1Ny42IkU!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="400" style="border:0;border-radius:20px" allowfullscreen="" loading="lazy"></iframe>
+    </div>
   </section>
 
 </div>
 
 <footer>
-  <p>© 2025 Shree Chaudhary’s Rustic Royale Bakery • Khalilabad • Made with Passion & Honesty</p>
+  <p>© 2025 Shree Chaudhary’s Rustic Royale Bakery • Khalilabad • Coming Soon – Full Launch Ahead!</p>
 </footer>
 
 <script>
@@ -137,7 +144,7 @@
       if (existing) existing.quantity += 1;
       else cart.push({name, price, quantity: 1});
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert(name + ' added to cart!');
+      alert(`${name} added to cart!`);
       renderCart();
     });
   });
@@ -150,22 +157,32 @@
     cart.forEach((item, i) => {
       const div = document.createElement('div');
       div.className = 'cart-item';
-      div.innerHTML = `<span>${item.name} × ${item.quantity}</span><span>₹${item.price * item.quantity}</span><button onclick="this.parentElement.remove(); cart.splice(${i},1); localStorage.setItem('cart',JSON.stringify(cart)); renderCart();">Remove</button>`;
+      div.innerHTML = `
+        <span>${item.name} × ${item.quantity}</span>
+        <span>₹${item.price * item.quantity}</span>
+        <button onclick="removeItem(${i})" style="background:#ff6d00;color:#fff;border:none;padding:8px 15px;border-radius:5px;cursor:pointer">Remove</button>
+      `;
       container.appendChild(div);
       total += item.price * item.quantity;
     });
-    totalElem.textContent = 'Total: ₹' + total;
+    totalElem.textContent = `Total: ₹${total}`;
   }
 
-  document.getElementById('checkout-btn')?.addEventListener('click', () => {
+  function removeItem(i) {
+    cart.splice(i, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+  }
+
+  document.getElementById('checkout-btn').addEventListener('click', () => {
     if (cart.length === 0) return alert('Cart is empty!');
     let msg = 'My Order:\n';
     cart.forEach(item => msg += `${item.name} × ${item.quantity} = ₹${item.price * item.quantity}\n`);
-    msg += `Total Amount: ₹${cart.reduce((s,i)=>s+i.price*i.quantity,0)}`;
-    window.open('https://wa.me/919958341082?text=' + encodeURIComponent(msg));
+    msg += `Total: ₹${cart.reduce((s, i) => s + i.price * i.quantity, 0)}`;
+    window.open(`https://wa.me/919958341082?text=${encodeURIComponent(msg)}`);
   });
 
-  renderCart(); // load cart on page load
+  renderCart();
 </script>
 
 </body>
