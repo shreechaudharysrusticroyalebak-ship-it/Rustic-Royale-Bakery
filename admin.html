@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Rustic Royale Bakery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{font-family:Arial;background:#222;color:#0f0;padding:20px}
+    .c{max-width:800px;margin:0 auto;background:#111;padding:30px;border-radius:15px}
+    input,textarea{width:100%;padding:12px;margin:10px 0;background:#333;color:#0f0;border:1px solid #0f0;border-radius:8px}
+    button{background:#0f0;color:#000;padding:15px;font-size:1.2rem;border:none;border-radius:8px;cursor:pointer}
+    .p{background:#333;padding:15px;margin:15px 0;border-radius:10px}
+    .d{background:#f00;color:#fff;padding:8px 15px;border:none;border-radius:5px;float:right}
+  </style>
+</head>
+<body>
+<div class="c">
+  <h1 style="color:#0f0;text-align:center">Admin Panel</h1>
+  <input type="password" id="p" placeholder="Password">
+  <button onclick="login()">Login</button>
+
+  <div id="a" style="display:none">
+    <h2>Add Product</h2>
+    <input id="n" placeholder="Name">
+    <input id="pr" placeholder="Price">
+    <input id="i" placeholder="Image URL">
+    <textarea id="d" placeholder="Description"></textarea>
+    <button onclick="save()">Save Product</button>
+    <h2>Products</h2>
+    <div id="l"></div>
+  </div>
+</div>
+
+<script>
+const pass = "shree123"; // password badalna ho to yahan change kar dena
+let items = JSON.parse(localStorage.getItem('items'))||[];
+
+function login(){ if(document.getElementById('p').value===pass){document.getElementById('a').style.display='block';list();}else alert('Wrong!')}
+
+function save(){
+  items.push({n:document.getElementById('n').value, pr:document.getElementById('pr').value, i:document.getElementById('i').value, d:document.getElementById('d').value});
+  localStorage.setItem('items',JSON.stringify(items));
+  list(); alert('Saved!');
+  document.getElementById('n').value=document.getElementById('pr').value=document.getElementById('i').value=document.getElementById('d').value='';
+}
+
+function del(x){items.splice(x,1);localStorage.setItem('items',JSON.stringify(items));list();}
+
+function list(){
+  let h=''; items.forEach((e,i)=>{h+=`<div class="p"><b>${e.n}</b> - ₹${e.pr}<br><img src="${e.i}" width=100 onerror="this.src='https://via.placeholder.com/100'"><br>${e.d}<button class="d" onclick="del(${i})">Delete</button></div>`});
+  document.getElementById('l').innerHTML=h;
+}
+</script>
+</body>
+</html>
